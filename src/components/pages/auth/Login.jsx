@@ -32,14 +32,16 @@ const handleSubmit = async (event) => {
         console.log(res.data.status);
 
         if (res.data.status == "success") {
-            alert("User login successfully");
 
             HandleLogin(res.data.user,res.data.token)
 
             navigate("/dashboard");
+
         } else {
+
             alert("Invalid email and password");
             navigate("/");
+            
         }
 
     } catch (error) {

@@ -1,12 +1,17 @@
-import React from 'react'
+import { useAuth } from '../hooks/useAuth';
+import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = (children) => {
-  
-  return (
-    <div>
+const PrivateRoute = ({ children }) => {
 
-    </div>
-  )
-}
+  const { user, token } = useAuth();
 
-export default PrivateRoute
+  // Not Login
+  if (!token || !user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // Login Success
+  return children;
+};
+
+export default PrivateRoute;
