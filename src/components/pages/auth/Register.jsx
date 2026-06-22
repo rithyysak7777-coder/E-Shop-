@@ -52,20 +52,18 @@ const Register = () => {
 
     try {
       const res = await RegisterAccount(formData);
-      
-      console.log(res);
-      
 
-      if(res.data.status === "success" ){
+      console.log(res);
+
+      if (res.status === "Success") {
         alert("User Register successfully");
         navigate("/");
-      }else{
-          alert("User Not Found email or password");
-          navigate("/register");
+      } else {
+        alert(res.message || "Registration failed. Please try again.");
+        navigate("/register");
       }
     } catch (error) {
       console.log(error);
-      
     }
   };
 
@@ -80,7 +78,7 @@ const Register = () => {
             <label className="form-label">Name</label>
             <input
               type="text"
-              name="name" 
+              name="name"
               className="form-control"
               placeholder="Enter name"
               value={form.name}
@@ -144,7 +142,7 @@ const Register = () => {
             Register
           </button>
           <p className="text-center mt-3 mb-0">
-                You have already account? <Link to="/">Login</Link>
+            You have already account? <Link to="/">Login</Link>
           </p>
         </form>
       </div>

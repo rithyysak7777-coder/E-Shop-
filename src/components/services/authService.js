@@ -1,17 +1,19 @@
-import { api } from "../api/axios"
+import axios from "../api/axios";
 
-export const LoginAccount = async (data)=>{
-    return await api.post("/auth/login",data)
-}
+export const LoginAccount = async (credentials) => {
+  try {
+    const response = await axios.post("/auth/login", credentials);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
 
-export const RegisterAccount = async (data)=>{
-    return await api.post("/auth/register",data);
-}
-
-// export const getProfile = async ()=>{
-//     await api.get("/user/profile",{
-//         headers:{
-//             Authorization:${token}
-//         }
-//     });
-// }
+export const RegisterAccount = async (data) => {
+  try {
+    const response = await axios.post("/auth/register", data);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -1,10 +1,11 @@
 import AppRoutes from './components/routes/AppRoutes'
+import { CartProvider } from './components/contexts/CartContext'
 
 const App = () => {
   return (
-    <div>
+    <CartProvider>
       <AppRoutes/>
-    </div>
+    </CartProvider>
   )
 }
 

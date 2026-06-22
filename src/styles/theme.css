@@ -1,0 +1,376 @@
+:root {
+  --shop-bg: #ffffff;
+  --shop-surface: #ffffff;
+  --shop-surface-2: #f8fafc;
+  --shop-text: #0f172a;
+  --shop-muted: #64748b;
+  --shop-border: #e2e8f0;
+  --shop-primary: #4f6ff7;
+  --shop-primary-2: #3b82f6;
+  --shop-primary-rgb: 79, 111, 247;
+  --shop-danger: #dc2626;
+  --shop-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+:root[data-shop-theme="light-blue"] {
+  --shop-bg: #ffffff;
+  --shop-surface: #ffffff;
+  --shop-surface-2: #f8fafc;
+  --shop-text: #0f172a;
+  --shop-muted: #64748b;
+  --shop-border: #e2e8f0;
+  --shop-primary: #4f6ff7;
+  --shop-primary-2: #3b82f6;
+  --shop-primary-rgb: 79, 111, 247;
+  --shop-danger: #dc2626;
+  --shop-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+:root[data-shop-theme="dark-gold"] {
+  --shop-bg: #000000;
+  --shop-surface: #121212;
+  --shop-surface-2: #1a1a1a;
+  --shop-text: #f8fafc;
+  --shop-muted: #94a3b8;
+  --shop-border: #222222;
+  --shop-primary: #fbbf24;
+  --shop-primary-2: #f59e0b;
+  --shop-primary-rgb: 251, 191, 36;
+  --shop-danger: #ef4444;
+  --shop-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.55), 0 8px 10px -6px rgba(0, 0, 0, 0.45);
+}
+
+body {
+  background: var(--shop-bg);
+  color: var(--shop-text);
+}
+
+/* Responsive content wrapper used by layouts and pages */
+.content-wrapper {
+  max-width: 1400px; /* admin */
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* Customer-facing container (slightly narrower) */
+.container-custom {
+  max-width: 1200px; /* customer pages */
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .content-wrapper,
+  .container-custom {
+    padding: 0 1.25rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper,
+  .container-custom {
+    padding: 0 0.75rem;
+  }
+}
+
+.shop-shell,
+.admin-shell {
+  background: var(--shop-bg) !important;
+  color: var(--shop-text);
+}
+
+.shop-navbar,
+.admin-navbar-themed {
+  background: color-mix(
+    in srgb,
+    var(--shop-surface) 88%,
+    transparent
+  ) !important;
+  border-color: var(--shop-border) !important;
+  box-shadow: var(--shop-shadow);
+}
+
+.shop-footer {
+  background: var(--shop-surface) !important;
+  color: var(--shop-muted) !important;
+  border-color: var(--shop-border) !important;
+}
+
+.shop-footer .footer-brand,
+.theme-text {
+  color: var(--shop-text) !important;
+}
+
+.theme-muted {
+  color: var(--shop-muted) !important;
+}
+
+.theme-card,
+.card,
+.admin-crud-card,
+.dashboard-card {
+  background: var(--shop-surface) !important;
+  color: var(--shop-text) !important;
+  border: 1px solid var(--shop-border) !important;
+  border-radius: 16px !important;
+  box-shadow: var(--shop-shadow) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.theme-card:hover,
+.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.08),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+:root[data-shop-theme="dark-gold"] .theme-card:hover,
+:root[data-shop-theme="dark-gold"] .card:hover {
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.35),
+    0 10px 10px -5px rgba(0, 0, 0, 0.25) !important;
+}
+
+.table {
+  --bs-table-bg: var(--shop-surface);
+  --bs-table-color: var(--shop-text);
+  --bs-table-border-color: var(--shop-border);
+  --bs-table-hover-bg: var(--shop-surface-2);
+  --bs-table-hover-color: var(--shop-text);
+}
+
+.table-light {
+  --bs-table-bg: var(--shop-surface-2);
+  --bs-table-color: var(--shop-text);
+}
+
+.text-dark,
+.text-secondary,
+.text-muted {
+  color: var(--shop-text) !important;
+}
+
+.text-muted,
+.text-secondary,
+small {
+  color: var(--shop-muted) !important;
+}
+
+.text-primary {
+  color: var(--shop-primary) !important;
+}
+
+.btn-primary {
+  background: var(--shop-primary) !important;
+  border: 2px solid var(--shop-border) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+:root[data-shop-theme="light-blue"] .btn-primary {
+  color: #ffffff !important;
+}
+
+.btn-outline-primary {
+  border-color: var(--shop-primary) !important;
+  color: var(--shop-primary) !important;
+}
+
+.btn-outline-primary:hover {
+  background: var(--shop-primary) !important;
+  color: #ffffff !important;
+}
+
+.form-control,
+.form-select,
+.input-group-text,
+.dropdown-menu {
+  background-color: var(--shop-surface) !important;
+  border-color: var(--shop-border) !important;
+  color: var(--shop-text) !important;
+}
+
+.form-control::placeholder {
+  color: var(--shop-muted) !important;
+}
+
+/* Alert styles */
+.alert {
+  background-color: var(--shop-surface-2) !important;
+  border-color: var(--shop-border) !important;
+  color: var(--shop-text) !important;
+}
+
+.alert-danger {
+  background-color: rgba(220, 38, 38, 0.15) !important;
+  border-color: #dc2626 !important;
+  color: #dc2626 !important;
+}
+
+:root[data-shop-theme="dark-gold"] .alert-danger {
+  background-color: rgba(220, 38, 38, 0.2) !important;
+  border-color: #ff6b6b !important;
+  color: #ff8888 !important;
+}
+
+.btn-close {
+  filter: invert(0);
+}
+
+:root[data-shop-theme="dark-gold"] .btn-close {
+  filter: invert(1);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--shop-border);
+  border-radius: 999px;
+  background: var(--shop-surface-2);
+  color: var(--shop-text);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.theme-toggle i {
+  color: var(--shop-primary);
+}
+
+.brand-gradient {
+  color: var(--shop-primary) !important;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
+}
+
+/* ==========================================================
+   MODERN & CLEAN STYLES FOR ADMIN SHELL
+   ========================================================== */
+.admin-shell {
+  --admin-border: #e2e8f0;
+  --admin-card-bg: #ffffff;
+  --admin-text-primary: #0f172a;
+  --admin-text-secondary: #64748b;
+  --admin-text-muted: #94a3b8;
+  --admin-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --admin-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+:root[data-shop-theme="dark-gold"] .admin-shell {
+  --admin-border: #222222;
+  --admin-card-bg: #121212;
+  --admin-text-primary: #f8fafc;
+  --admin-text-secondary: #94a3b8;
+  --admin-text-muted: #64748b;
+  --admin-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  --admin-shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.75);
+}
+
+/* Admin Shell Layout & Cards */
+.admin-shell .card,
+.admin-shell .admin-crud-card,
+.admin-shell .dashboard-card {
+  background: var(--admin-card-bg) !important;
+  color: var(--admin-text-primary) !important;
+  border: 1px solid var(--admin-border) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--admin-shadow) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.admin-shell .card:hover,
+.admin-shell .admin-crud-card:hover,
+.admin-shell .dashboard-card:hover {
+  box-shadow: var(--admin-shadow-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Tables inside Admin Shell */
+.admin-shell .table {
+  --bs-table-bg: var(--admin-card-bg) !important;
+  --bs-table-color: var(--admin-text-primary) !important;
+  --bs-table-border-color: var(--admin-border) !important;
+  --bs-table-hover-bg: rgba(79, 111, 247, 0.05) !important;
+  --bs-table-hover-color: var(--admin-text-primary) !important;
+}
+
+:root[data-shop-theme="dark-gold"] .admin-shell .table {
+  --bs-table-hover-bg: rgba(251, 191, 36, 0.06) !important;
+}
+
+.admin-shell .table-light {
+  --bs-table-bg: rgba(0, 0, 0, 0.015) !important;
+}
+
+:root[data-shop-theme="dark-gold"] .admin-shell .table-light {
+  --bs-table-bg: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Typography contrast in Admin Shell */
+.admin-shell .text-dark {
+  color: var(--admin-text-primary) !important;
+}
+.admin-shell .text-secondary {
+  color: var(--admin-text-secondary) !important;
+}
+.admin-shell .text-muted {
+  color: var(--admin-text-muted) !important;
+}
+.admin-shell small {
+  color: var(--admin-text-secondary) !important;
+}
+.admin-shell .text-primary {
+  color: #4f6ff7 !important;
+}
+:root[data-shop-theme="dark-gold"] .admin-shell .text-primary {
+  color: #fbbf24 !important;
+}
+
+/* Inputs & Form Control inside Admin Shell */
+.admin-shell .form-control,
+.admin-shell .form-select {
+  background-color: var(--admin-card-bg) !important;
+  border: 1px solid var(--admin-border) !important;
+  color: var(--admin-text-primary) !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+}
+
+.admin-shell .form-control:focus,
+.admin-shell .form-select:focus {
+  border-color: #4f6ff7 !important;
+  box-shadow: 0 0 0 3px rgba(79, 111, 247, 0.15) !important;
+  background-color: var(--admin-card-bg) !important;
+}
+
+:root[data-shop-theme="dark-gold"] .admin-shell .form-control:focus,
+:root[data-shop-theme="dark-gold"] .admin-shell .form-select:focus {
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15) !important;
+  background-color: var(--admin-card-bg) !important;
+}
+
+/* Modal and Overlays */
+.admin-shell .modal-content {
+  background: var(--admin-card-bg) !important;
+  color: var(--admin-text-primary) !important;
+  border: 1px solid var(--admin-border) !important;
+}
+
+.admin-shell .bg-light {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+:root[data-shop-theme="dark-gold"] .admin-shell .bg-light {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
